@@ -109,12 +109,12 @@
                 <div class="modal-body">
                     <p>Peta Web Interaktif ini menampilkan data geografis wilayah Flores Timur.</p>
                     <p>Dibuat oleh:</p>
-                    <ul>
-                        <li>Mutiara Indah Putri Wardani</li>
-                        <li>24/536266/SV/24429</li>
-                        <li>Acara 6</li>
-                        <li>Praktikum PGWEB</li>
-                    </ul>
+                    <p>
+                        <p>Mutiara Indah Putri Wardani</p>
+                        <p>24/536266/SV/24429</p>
+                        <p>Acara 6</p>
+                        <p>Praktikum PGWEB</p>
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Mengerti</button>
@@ -269,8 +269,9 @@
 
             var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
-            // Panggil fungsi untuk menyisipkan legenda setelah control layer dibuat
-            enhanceLayerControl();
+            // Panggil fungsi untuk menyisipkan legenda setelah control layer dirender
+            // Diberi sedikit jeda untuk memastikan elemen DOM sudah siap
+            setTimeout(enhanceLayerControl, 100);
 
             // 4. Tambahkan Search Control
             var searchControl = new L.Control.Search({
